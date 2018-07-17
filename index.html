@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>COMP125 - OOP</title>
+    <!-- CSS Section -->
+
+    <!-- 3rd Party Stylesheets-->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/font-awesome/css/font-awesome.min.css">
+
+    <!-- App Stylesheets -->
+    <link rel="stylesheet" href="/Content/app.css">
+</head>
+
+<body>
+
+    <!-- App Header -->
+    <header>
+        <!-- Main Navigation -->
+        <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">COMP125</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">
+                            <i class="fa fa-home fa-lg"></i> Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">
+                            <i class="fa fa-comment fa-lg"></i> Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main id="MainContent">
+        <div class="container">
+            <div class="jumbotron">
+                <h1 class="display-4">COMP125 - OOP Template</h1>
+
+                <div class="row">
+                    <div class="col-md-3">
+                            <label for="minRangeValue">Min Range</label>
+                            <input type="range" class="custom-range" min="1" max="100" step="1" value="1"  id="minRange">
+                            <div id="minRangeValue" class="alert alert-success"></div>
+                        </div>
+                    <div class="col-md-3">
+                            <label for="maxRangeValue">Max Range</label>
+                            <input type="range" class="custom-range" min="1" max="100" step="1" value="6" id="maxRange">
+                            <div id="maxRangeValue" class="alert alert-success"></div>
+                        </div>
+                </div>
+               
+                
+                <div class="row">
+                    <div class="col-md-1">
+                            <button id="RollButton" class="btn btn-primary btn-lg">Roll</button>
+                    </div>
+                    <div class="col-md-2">
+                        <div id="Result" class="alert alert-success"></div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer id="MainFooter">
+        <nav class="navbar fixed-bottom navbar-light bg-light">
+            <h4>&copy; Copyright 2018. All Rights Reserved.</h4>
+        </nav>
+    </footer>
+
+    <!-- JavaScript Section -->
+
+    <!-- JavaScript 3rd-Party Libraries -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Application Scripts-->
+    <script src="/Scripts/core/app.js"></script>
+</body>
+
+</html>
