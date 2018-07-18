@@ -6,18 +6,25 @@
   let XHR;
 
 
-  function insertHTML(sourceURL, destinationID) {
-    let target = document.getElementById(destinationID);
+  function insertHTML(sourceURL, destTag) {
+    let target = document.getElementsByTagName(destTag)[0];
+    
+     
+    // STEP 2 - Instantiate an XMLHttpRequest object
+     XHR = new XMLHttpRequest();
+
     // STEP 3 - Set up an event listner / handler that
     // listens for a readystatechange and requires
     // the readyState code to be "4" and the status to be "200"
     XHR.addEventListener("readystatechange", function(){
-      if((XHR.readyState === 4) && (XHR.status === 200)) {
-        // responseText is the data we are recieving from the server
-
-        console.log(XHR.responseText);
-        target.innerHTML = XHR.responseText;
-
+      if(this.status === 200) {
+        if(this.readyState === 4)  {
+          // responseText is the data we are recieving from the server
+  
+          console.log(this.responseText);
+          target.innerHTML = this.responseText;
+  
+        }
       }
     });
 
@@ -39,8 +46,7 @@
       "font-weight: bold; font-size: 20px;"
     );
 
-    // STEP 2 - Instantiate an XMLHttpRequest object
-    XHR = new XMLHttpRequest();
+   
 
     Main();
   }
@@ -52,7 +58,29 @@
   function Main() {
     console.log(`%c App Started...`, "font-weight: bold; font-size: 20px;");
     
-    insertHTML("/Views/partials/header.html", "test")
+    insertHTML("/Views/partials/header.html", "header");
+    insertHTML("/Views/partials/footer.html", "footer");
+
+    /*
+    $.get("/Views/partials/header.html", function(data){
+      let target = document.getElementsByTagName("header")[0];
+
+      target.innerHTML = data;
+    });
+
+    $.get("/Views/partials/footer.html", function(data){
+      let target = document.getElementsByTagName("footer")[0];
+
+      target.innerHTML = data;
+    });
+
+    $.get("data.json", function(data){
+
+      console.log(data);
+    });
+    */
+
+  
   }
 
   window.addEventListener("load", Start);
